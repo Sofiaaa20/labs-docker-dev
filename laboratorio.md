@@ -16,3 +16,12 @@ docker.io/library/nginx:latest
 # Running our container
 
 77ddf35d886188bdd1d93a57d526353f9d7878beab71d826b514127211c937c7
+
+#  Ejecuta un contenedor de Ubuntu en modo interactivo:
+
+@Sofiaaa20 ➜ /workspaces/labs-docker-dev (main) $ docker run -it ubuntu bashUnable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+9c704ecd0c69: Pull complete 
+Digest: sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
+Status: Downloaded newer image for ubuntu:latest
+root@4c04d3eb60b5:/# 
