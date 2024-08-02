@@ -25,3 +25,14 @@ latest: Pulling from library/ubuntu
 Digest: sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
 Status: Downloaded newer image for ubuntu:latest
 root@4c04d3eb60b5:/# 
+
+
+# Eliminar 
+
+@Sofiaaa20 ➜ /workspaces/labs-docker-dev (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                       PORTS                                   NAMES
+4c04d3eb60b5   ubuntu    "bash"                   4 minutes ago   Exited (130) 4 seconds ago   
+
+# eliminar
+
+
