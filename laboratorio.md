@@ -33,6 +33,25 @@ root@4c04d3eb60b5:/#
 CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                       PORTS                                   NAMES
 4c04d3eb60b5   ubuntu    "bash"                   4 minutes ago   Exited (130) 4 seconds ago   
 
-# eliminar
+# ---------------------------------------------------------------------------------------------
 
+# Docker Build
+
+@Sofiaaa20 ➜ /workspaces/labs-docker-dev (main) $ docker build -t ubuntu-updated:latest .
+[+] Building 33.5s (9/9) FINISHED                                                                            docker:default
+ => [internal] load build definition from Dockerfile                                                                   0.4s
+ => => transferring dockerfile: 562B                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                       0.0s
+ => [internal] load .dockerignore                                                                                      0.2s
+ => => transferring context: 2B                                                                                        0.0s
+ => [1/4] FROM docker.io/library/ubuntu:latest                                                                         0.2s
+ => [internal] load build context                                                                                      0.5s
+ => => transferring context: 42.14kB                                                                                   0.0s
+ => [2/4] RUN apt-get update && apt-get install -y     curl     wget     vim     && apt-get clean                     30.0s
+ => [3/4] WORKDIR /app                                                                                                 0.5s 
+ => [4/4] COPY . /app                                                                                                  0.2s 
+ => exporting to image                                                                                                 1.4s 
+ => => exporting layers                                                                                                1.3s 
+ => => writing image sha256:0cd578be62ae3fd4896b33c85d70fb7d507525c96da7ca1346284e7dcbc89f93                           0.0s
+ => => naming to docker.io/library/ubuntu-updated:latest    
 
