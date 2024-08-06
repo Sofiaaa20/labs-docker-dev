@@ -55,5 +55,33 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        
  => => writing image sha256:0cd578be62ae3fd4896b33c85d70fb7d507525c96da7ca1346284e7dcbc89f93                           0.0s
  => => naming to docker.io/library/ubuntu-updated:latest    
 
- # 
+ # CMD 
+ CMD ["nginx", "-g", "daemon off;"]
 
+ 
+ # Construir y ejecutar la imagen de Nginx
+
+
+## Construir
+ @Sofiaaa20 ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 1.7s (9/9) FINISHED                                                                             docker:default
+ => [internal] load build definition from Dockerfile                                                                   0.0s
+ => => transferring dockerfile: 584B                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                       0.0s
+ => [internal] load .dockerignore                                                                                      0.0s
+ => => transferring context: 2B                                                                                        0.0s
+ => [1/4] FROM docker.io/library/ubuntu:latest                                                                         0.0s
+ => [internal] load build context                                                                                      0.1s
+ => => transferring context: 18.68kB                                                                                   0.0s
+ => CACHED [2/4] RUN apt-get update && apt-get install -y     curl     wget     vim     && apt-get clean               0.0s
+ => CACHED [3/4] WORKDIR /app                                                                                          0.0s
+ => [4/4] COPY . /app                                                                                                  0.2s
+ => exporting to image                                                                                                 1.0s
+ => => exporting layers                                                                                                0.9s
+ => => writing image sha256:ca82a39d5d6af8c3e2c47e900d2c5330fbdebdd4cb858cc79a1c7725481920b6                           0.0s
+ => => naming to docker.io/library/my-nginx:latest  
+
+
+## Ejecutar 
+@Sofiaaa20 ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 80:80 my-nginx:latest                                        
+5fb82f85b22e66df8dad423c5e8aec69c1389df1c85e38e8bd301f0ef892c86e   
