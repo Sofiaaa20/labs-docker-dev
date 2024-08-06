@@ -59,8 +59,7 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        
  CMD ["nginx", "-g", "daemon off;"]
 
  
- # Construir y ejecutar la imagen de Nginx
-
+# Construir y ejecutar la imagen de Nginx
 
 ## Construir
  @Sofiaaa20 ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
@@ -85,3 +84,26 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        
 ## Ejecutar 
 @Sofiaaa20 ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 80:80 my-nginx:latest                                        
 5fb82f85b22e66df8dad423c5e8aec69c1389df1c85e38e8bd301f0ef892c86e   
+
+# copy 
+COPY index.html /usr/share/nginx/html/
+
+
+# index - reeconstruir 
+
+@Sofiaaa20 ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 1.6s (8/8) FINISHED                                                                                 docker:default
+ => [internal] load build definition from Dockerfile                                                                       0.0s
+ => => transferring dockerfile: 392B                                                                                       0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                           0.0s
+ => [internal] load .dockerignore                                                                                          0.0s
+ => => transferring context: 2B                                                                                            0.0s
+ => [1/3] FROM docker.io/library/ubuntu:latest                                                                             0.0s
+ => [internal] load build context                                                                                          0.0s
+ => => transferring context: 31B                                                                                           0.0s
+ => CACHED [2/3] RUN apt-get update &&     apt-get install -y nginx &&     apt-get clean                                   0.0s
+ => [3/3] COPY index.html /usr/share/nginx/html/                                                                           0.1s
+ => exporting to image                                                                                                     0.9s
+ => => exporting layers                                                                                                    0.8s
+ => => writing image sha256:d13e57f2004cebbbe7f09975e4926e2734f76542b8302d806304b3189da3ca77                               0.0s
+ => => naming to docker.io/library/my-nginx:latest     
